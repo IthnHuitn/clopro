@@ -358,18 +358,6 @@ resource "yandex_compute_instance_group" "lamp_group" {
                   <h1>Welcome to LAMP Server</h1>
                   <p>"https://${var.bucket_name}.website.yandexcloud.net/${var.image_object_key}"<p>
                   <img src="https://${var.bucket_name}.website.yandexcloud.net/${var.image_object_key}" alt="Image from Object Storage">
-                  <p>Instance: <span class="instance" id="hostname"></span></p>
-              <script>
-                  // Получаем hostname через JavaScript
-                  fetch('/hostname.php')
-                      .then(response => response.text())
-                      .then(data => {
-                          document.getElementById('hostname').textContent = data;
-                      })
-                      .catch(() => {
-                          document.getElementById('hostname').textContent = 'unknown';
-                      });
-              </script>
               </body>
               </html>
         runcmd:
